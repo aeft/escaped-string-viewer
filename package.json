@@ -1,0 +1,27 @@
+{
+  "name": "inline-escaped-string-renderer",
+  "version": "1.0.0",
+  "description": "Chrome extension that renders escaped strings in a floating preview panel",
+  "private": true,
+  "scripts": {
+    "build": "tsc && npm run bundle && npm run copy-assets",
+    "dev": "tsc --watch",
+    "bundle": "node bundle.js",
+    "copy-assets": "cp src/popup.html dist/ && cp src/manifest.json dist/",
+    "clean": "rm -rf dist",
+    "package": "npm run clean && npm run build && cd dist && zip -r ../extension.zip .",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "chrome-extension",
+    "typescript",
+    "string-renderer",
+    "escape-sequences"
+  ],
+  "author": "",
+  "license": "MIT"
+}

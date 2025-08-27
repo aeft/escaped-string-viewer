@@ -1,32 +1,63 @@
-# Inline Escaped String Renderer (MV3)
+# String Preview
 
-Render selected escaped strings (like `\n`, `\t`, `\uXXXX`) in a floating panel on any page.
+Chrome extension that shows you what escaped strings actually look like when rendered.
 
-## Install (Developer Mode)
+## Examples
 
-1. Clone or download this folder.
-2. Open **chrome://extensions**.
-3. Toggle **Developer mode** (top-right).
-4. Click **Load unpacked** and select the folder.
+**Example 1**: Select `"def hello():\n    print(\"World\")\n    return True"` and see properly formatted Python code.
 
-## Use
+**Example 2**: Select `"# Title\n\n- Item 1\n- Item 2\n\n**Bold text**"` and see rendered markdown structure.
 
-- Select any text containing escaped sequences, or a quoted string literal.
-- On mouseup, the panel appears near the cursor with the decoded version.
-- **Copy** copies the decoded text. **Wrap** toggles line wrapping. **✕** closes the panel.
-- Press **Esc** to close.
+**Note**: No need for precise selection! You can select entire lines of code or logs - the extension automatically extracts the longest escaped string from your selection.
 
-## What gets decoded?
+![String Preview Demo](./demo.gif)
+*GIF placeholder - demo coming soon*
 
-- Common sequences: `\\n`, `\\r`, `\\t`, `\\"`, `\\\\`, and `\\uXXXX`.
-- It detects both raw escaped fragments (e.g., `#!/usr/bin/env python\\nimport os`) and quoted strings (e.g., `"#!/usr/bin/env python\\n..."`).
+## Features
 
-## Notes
+- **Instant Preview**: Select any text containing escape sequences to see the rendered output
+- **Smart Detection**: Automatically finds and decodes quoted strings in complex text
+- **Multiple Formats**: Supports `\n`, `\t`, `\r`, `\"`, `\\`, `\uXXXX` and more
 
-- The panel is injected into a Shadow DOM to avoid style collisions.
-- Only a content script is needed; no background service worker.
-- If your selection is very large, consider wrapping ("Wrap: ON") to make it more readable.
+## Installation
+
+### Chrome Web Store (Coming Soon)
+
+*Extension will be available on Chrome Web Store*
+
+### Manual Installation
+
+1. Download or clone this repository
+2. Run `npm install && npm run build`
+3. Open `chrome://extensions`
+4. Enable "Developer mode"
+5. Click "Load unpacked" and select the `dist/` folder
+
+## How it Works
+
+1. **Text Selection**: When you select text on any webpage, the extension automatically detects it
+2. **Smart Parsing**: Uses two methods to find escaped strings:
+   - Direct parsing of complete quoted strings like `"Hello\nWorld"`
+   - Extraction of the longest quoted string from complex text
+3. **JSON Decoding**: Applies `JSON.parse()` to safely decode escape sequences
+4. **Visual Preview**: Shows the rendered result in a floating panel with:
+   - Proper line breaks and formatting
+   - Copy-to-clipboard functionality
+   - Visual distinction between natural and wrapped line breaks
+
+## Development
+
+```bash
+npm install        # Install dependencies
+npm run dev        # Development mode with file watching
+npm run build      # Production build
+npm run package    # Create extension.zip for distribution
+```
 
 ## Privacy
 
-- The extension does not send data anywhere. All decoding happens locally in the content script.
+All string processing happens locally in your browser. No data is sent to external servers.
+
+## License
+
+MIT
