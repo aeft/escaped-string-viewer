@@ -40,16 +40,7 @@ jobs:
         with:
           name: Release ${{ steps.extract_tag.outputs.tag_name }}
           body: |
-            ## Changes in ${{ steps.extract_tag.outputs.tag_name }}
-            
             Chrome extension build for version ${{ steps.extract_tag.outputs.tag_name }}.
-            
-            ### Installation
-            1. Download `extension.zip`
-            2. Extract the contents
-            3. Open Chrome and go to `chrome://extensions/`
-            4. Enable "Developer mode"
-            5. Click "Load unpacked" and select the extracted folder
             
             ### Files
             - `extension.zip` - Ready-to-install Chrome extension

@@ -24,6 +24,16 @@ Chrome extension that shows you what escaped strings actually look like when ren
 
 *Extension will be available on Chrome Web Store*
 
+### Download Pre-built Extension
+
+1. Go to [Releases](https://github.com/aeft/escaped-string-viewer/releases)
+2. Download the latest `extension.zip`
+3. Open `chrome://extensions`
+4. Enable "Developer mode" (top right toggle)
+5. Choose one installation method:
+   - **Method A (Drag & Drop)**: Drag `extension.zip` directly to the extensions page
+   - **Method B (Extract & Load)**: Extract the zip, then click "Load unpacked" to select the extracted folder
+
 ### Manual Installation
 
 1. Download or clone this repository
