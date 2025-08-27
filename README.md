@@ -10,8 +10,7 @@ Chrome extension that shows you what escaped strings actually look like when ren
 
 **Note**: No need for precise selection! You can select entire lines of code or logs - the extension automatically extracts the longest escaped string from your selection.
 
-![String Preview Demo](./demo.gif)
-*GIF placeholder - demo coming soon*
+![String Preview Demo](./assets/demo.gif)
 
 ## Features
 

@@ -1,11 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "Inline Escaped String Renderer",
-    "description": "Render selected escaped strings (e.g., \n, \t) in a floating preview panel.",
+    "name": "Escaped String Viewer",
+    "description": "Render selected escaped strings in a floating preview panel.",
     "version": "1.0.0",
     "action": {
         "default_popup": "popup.html",
-        "default_title": "Inline Escaped String Renderer Settings"
+        "default_title": "Escaped String Viewer Settings"
     },
     "permissions": [
         "storage",
