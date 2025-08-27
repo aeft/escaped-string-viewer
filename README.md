@@ -1,4 +1,4 @@
-# String Preview
+# Escaped String Viewer
 
 Chrome extension that shows you what escaped strings actually look like when rendered.
 

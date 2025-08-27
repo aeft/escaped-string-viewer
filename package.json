@@ -1,5 +1,5 @@
 {
-  "name": "inline-escaped-string-renderer",
+  "name": "escaped-string-viewer",
   "version": "1.0.0",
   "description": "Chrome extension that renders escaped strings in a floating preview panel",
   "private": true,
